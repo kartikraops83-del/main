@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Railway Tracker - Live Train Status</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-train"></i>
+                    <h1>Indian Railway Tracker</h1>
+                </div>
+                <p class="tagline">Real-time Train Status, Delays & Location Tracking</p>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Track Train</a></li>
+                <li><a href="#">Delayed Trains</a></li>
+                <li><a href="#">Analytics</a></li>
+                <li><a href="#">Stations</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Search Section -->
+            <section class="search-section">
+                <h2>Find Your Train</h2>
+                <div class="search-box">
+                    <div class="search-form">
+                        <input type="text" id="trainNumber" placeholder="Enter Train Number" class="input-field">
+                        <input type="text" id="fromStation" placeholder="From Station" class="input-field">
+                        <input type="text" id="toStation" placeholder="To Station" class="input-field">
+                        <input type="date" id="travelDate" class="input-field">
+                        <button class="search-btn" onclick="searchTrain()">Search</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Stats -->
+            <section class="stats-section">
+                <h2>Current Status</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-train"></i>
+                        <h3 id="totalTrains">0</h3>
+                        <p>Total Trains Operating</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-check-circle"></i>
+                        <h3 id="onTimeTrains">0</h3>
+                        <p>Running On Time</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3 id="delayedTrains">0</h3>
+                        <p>Delayed Trains</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <h3 id="avgDelay">0</h3>
+                        <p>Avg Delay (mins)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Train Results -->
+            <section class="results-section">
+                <h2>Delayed Trains</h2>
+                <div class="trains-container" id="trainsContainer">
+                    <!-- Train cards will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Train Detail Modal -->
+            <div id="trainModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <div id="modalBody">
+                        <!-- Train details will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Indian Railway Tracker. All rights reserved.</p>
+            <p>Data sourced from Indian Railways API and IRCTC</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
